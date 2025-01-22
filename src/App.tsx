@@ -161,7 +161,7 @@ function App() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-blue-800 text-center text-blue-100">
-            <p>&copy; {new Date().getFullYear()} TechCare 2025. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} TechCare. All rights reserved.</p>
           </div>
         </div>
       </footer>
