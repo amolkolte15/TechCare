@@ -148,7 +148,7 @@ function App() {
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <ul className="space-y-2">
                 <li className="text-blue-100">support@techcare.com</li>
-                <li className="text-blue-100">1-800-TECHCARE</li>
+                <li className="text-blue-100">+91 73978896738</li>
               </ul>
             </div>
             <div>
@@ -161,7 +161,7 @@ function App() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-blue-800 text-center text-blue-100">
-            <p>&copy; {new Date().getFullYear()} TechCare. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} TechCare 2025. All rights reserved.</p>
           </div>
         </div>
       </footer>
