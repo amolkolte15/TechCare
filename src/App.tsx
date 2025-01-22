@@ -9,7 +9,7 @@ import type { UserRole } from './types';
 const featuredDoctors = [
   {
     id: '1',
-    name: 'Dr.Rushi Dalvi',
+    name: 'Dr. Sarah Johnson',
     specialty: 'Cardiology',
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=500',
     availability: {}
@@ -148,11 +148,7 @@ function App() {
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <ul className="space-y-2">
                 <li className="text-blue-100">support@techcare.com</li>
-
-                <li className="text-blue-100"> +91 7397889638</li>
-
                 <li className="text-blue-100">8261048834</li>
-
               </ul>
             </div>
             <div>
