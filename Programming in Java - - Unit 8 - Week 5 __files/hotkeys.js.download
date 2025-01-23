@@ -1,0 +1,64 @@
+// this file is used for keyboard accessibility all types of assigments and lessons
+
+function compilekey() {
+    document.getElementById("compile-code-button").click();
+}
+
+function submitkey() {
+    document.getElementById('submit-form-button').click();
+}
+
+function add_escape_event_listener(content_div_id, param_name) {
+    let content_div = document.getElementById(content_div_id);
+    if (content_div != null) {
+        content_div.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                event.preventDefault();
+                let params = (new URL(document.location)).searchParams;
+                let unit_lesson_id = params.get(param_name);
+                if (unit_lesson_id != null) {
+                    let focus_point = document.getElementById(param_name + "_" + unit_lesson_id);
+                    focus_point.focus();
+                }
+            }
+        });
+    }
+}
+
+function hotkeys() {
+    let form_div = document.getElementById('gcb-submit-form');
+    if (form_div != null) {
+        form_div.addEventListener("keydown", function (event) {
+
+            if (event.altKey && event.key.toLowerCase() === "d") {
+                event.preventDefault();
+                saveDraft(pa_unit_value);
+            }
+
+            if (event.altKey && event.key.toLowerCase() === "c") {
+                event.preventDefault();
+                compilekey();
+            }
+
+            if (event.altKey && event.key.toLowerCase() === "s") {
+                event.preventDefault();
+                submitkey();
+            }
+
+            if (event.altKey && event.key.toLowerCase() === "r") {
+                event.preventDefault();
+                resetCode(pa_unit_value);
+            }
+
+        });
+    }
+}
+
+$(function () {
+
+    hotkeys();
+
+    add_escape_event_listener('gcb-content', 'name')
+    add_escape_event_listener('gcb-main-article', 'lesson');
+    add_escape_event_listener('gcb-main-article', 'assessment');
+});

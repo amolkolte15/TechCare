@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { StatsSection } from './components/Stats';
 import { DoctorCard } from './components/DoctorCard';
 import { SignInModal } from './components/auth/SignInModal';
+import { SignUpModal } from './components/auth/SignUpModal';
 import { Activity, UserCog, Users } from 'lucide-react';
 import type { UserRole } from './types';
 
@@ -32,6 +33,7 @@ const featuredDoctors = [
 
 function App() {
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
 
   const handleDoctorSelect = (doctorId: string) => {
     console.log('Selected doctor:', doctorId);
@@ -66,12 +68,18 @@ function App() {
               <a href="#" className="text-gray-600 hover:text-gray-900">Doctors</a>
               <a href="#" className="text-gray-600 hover:text-gray-900">Contact</a>
             </div>
-            <div>
+            <div className="flex space-x-4">
               <button 
                 onClick={() => setIsSignInModalOpen(true)}
                 className="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800"
               >
                 Sign In
+              </button>
+              <button 
+                onClick={() => setIsSignUpModalOpen(true)}
+                className="bg-white text-blue-900 border border-blue-900 px-4 py-2 rounded-lg hover:bg-blue-50"
+              >
+                Sign Up
               </button>
             </div>
           </div>
@@ -170,6 +178,11 @@ function App() {
         isOpen={isSignInModalOpen}
         onClose={() => setIsSignInModalOpen(false)}
         onSignIn={handleSignIn}
+      />
+
+      <SignUpModal
+        isOpen={isSignUpModalOpen}
+        onClose={() => setIsSignUpModalOpen(false)}
       />
     </div>
   );
